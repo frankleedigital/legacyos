@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigitallyDefined · Legacy OS Bundle</title>
+  <meta name="description" content="The Legacy OS Bundle for Gen X women: one branded system to plan your financial autonomy, protect your caregiving layer, and operate with control.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Inter:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dd-bg: #FFFCF9;
+      --dd-white: #FFFFFF;
+      --dd-ink: #111111;
+      --dd-text: #2D3748;
+      --dd-blue: #47B7D4;
+      --dd-orange: #F18B25;
+      --dd-red: #C20F0A;
+      --dd-frame: 1px solid var(--dd-ink);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+      text-shadow: none;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dd-bg);
+      color: var(--dd-text);
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .eyebrow, .section-label, .btn, .price, .card-title, .score-value {
+      font-family: "Inter", sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--dd-ink);
+    }
+
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      border-bottom: var(--dd-frame);
+      padding: 18px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--dd-ink);
+      color: var(--dd-white);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 14px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--dd-ink);
+      font-family: "Inter", sans-serif;
+    }
+    .brand-title span { color: var(--dd-orange); font-style: italic; }
+
+    /* HERO */
+    .hero {
+      padding: 64px 0 56px;
+      border-bottom: var(--dd-frame);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dd-orange);
+      border: var(--dd-frame);
+      background: var(--dd-white);
+      padding: 7px 14px;
+      margin-bottom: 24px;
+      font-family: "Inter", sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6.2vw, 72px);
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      font-weight: 900;
+      color: var(--dd-ink);
+      margin-bottom: 20px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h1 span { color: var(--dd-orange); }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--dd-text);
+      max-width: 620px;
+      margin: 0 auto 34px;
+      line-height: 1.55;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 38px;
+    }
+
+    .meta-pill {
+      border: var(--dd-frame);
+      background: var(--dd-white);
+      padding: 12px 18px;
+      min-width: 150px;
+    }
+
+    .meta-pill .value {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--dd-ink);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .meta-pill .label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      color: #555;
+      font-family: "Inter", sans-serif;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: var(--dd-frame);
+      background: var(--dd-orange);
+      color: var(--dd-white);
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 20px 44px;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: "Inter", sans-serif;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .btn:hover {
+      background: var(--dd-ink);
+      color: var(--dd-white);
+    }
+
+    .btn--white {
+      background: var(--dd-white);
+      color: var(--dd-ink);
+    }
+    .btn--white:hover {
+      background: var(--dd-ink);
+      color: var(--dd-white);
+    }
+
+    .btn-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      color: #555;
+      font-family: "Inter", sans-serif;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 64px 0;
+      border-bottom: var(--dd-frame);
+    }
+
+    .section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dd-ink);
+      border: var(--dd-frame);
+      background: var(--dd-white);
+      padding: 7px 14px;
+      margin-bottom: 18px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      color: var(--dd-ink);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--dd-text);
+      max-width: 520px;
+      margin: 0 auto;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    .section-head {
+      margin-bottom: 40px;
+    }
+
+    /* THREE COLUMNS */
+    .cols-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      text-align: left;
+    }
+
+    .col-card {
+      border: var(--dd-frame);
+      background: var(--dd-white);
+      padding: 24px;
+      position: relative;
+      min-height: 240px;
+    }
+
+    .col-card .num {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--dd-ink);
+      opacity: 0.06;
+      line-height: 1;
+      font-family: "Inter", sans-serif;
+    }
+
+    .col-card .card-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--dd-orange);
+      font-family: "Inter", sans-serif;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .col-card h3 {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--dd-ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .col-card p {
+      font-size: 13px;
+      color: var(--dd-text);
+      margin-bottom: 12px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    .col-card ul {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+
+    .col-card li {
+      font-size: 12px;
+      color: var(--dd-text);
+      padding-left: 14px;
+      position: relative;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    .col-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 5px;
+      height: 5px;
+      background: var(--dd-orange);
+      border: 1px solid var(--dd-ink);
+    }
+
+    .col-card--blue { border-top: 4px solid var(--dd-blue); }
+    .col-card--orange { border-top: 4px solid var(--dd-orange); }
+    .col-card--green { border-top: 4px solid var(--dd-red); }
+
+    /* FLOW */
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .flow-step {
+      border: var(--dd-frame);
+      background: var(--dd-white);
+      padding: 22px;
+      position: relative;
+    }
+
+    .flow-step .step-num {
+      width: 34px;
+      height: 34px;
+      background: var(--dd-ink);
+      color: var(--dd-white);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 15px;
+      margin-bottom: 14px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .flow-step h4 {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--dd-ink);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+      font-family: "Inter", sans-serif;
+    }
+
+    .flow-step p {
+      font-size: 13px;
+      color: var(--dd-text);
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    /* OBJECTIONS */
+    .objections {
+      display: grid;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .objection {
+      border: var(--dd-frame);
+      background: var(--dd-white);
+      padding: 18px 20px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .objection .q {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--dd-ink);
+      font-family: "Inter", sans-serif;
+      letter-spacing: -0.01em;
+    }
+
+    .objection .a {
+      font-size: 14px;
+      color: var(--dd-text);
+      line-height: 1.5;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    /* PRICE BOX */
+    .price-box {
+      border: var(--dd-frame);
+      background: var(--dd-white);
+      padding: 44px 30px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .price-box .eyebrow {
+      background: var(--dd-bg);
+      color: var(--dd-orange);
+      margin-bottom: 18px;
+    }
+
+    .price-value {
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--dd-orange);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      font-family: "Inter", sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .price-sub {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #555;
+      margin-bottom: 28px;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+    }
+
+    .price-includes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .price-includes span {
+      border: var(--dd-frame);
+      color: var(--dd-text);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 7px 12px;
+      font-family: "Inter", sans-serif;
+      background: var(--dd-white);
+    }
+
+    .price-note {
+      font-size: 12px;
+      color: #555;
+      margin-top: 14px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    /* SCORES */
+    .scores {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .score {
+      border: var(--dd-frame);
+      background: var(--dd-white);
+      padding: 18px;
+      text-align: center;
+    }
+
+    .score-value {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--dd-ink);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .score-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      color: #555;
+      font-family: "Inter", sans-serif;
+    }
+
+    /* GUARANTEE */
+    .guarantee {
+      border: var(--dd-frame);
+      background: var(--dd-white);
+      padding: 28px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .guarantee h3 {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--dd-ink);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+      font-family: "Inter", sans-serif;
+    }
+
+    .guarantee p {
+      font-size: 14px;
+      color: var(--dd-text);
+      max-width: 480px;
+      margin: 0 auto;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    /* FAQ */
+    .faq {
+      display: grid;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .faq-item {
+      border: var(--dd-frame);
+      background: var(--dd-white);
+      padding: 18px 20px;
+    }
+
+    .faq-item .q {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dd-ink);
+      font-family: "Inter", sans-serif;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      letter-spacing: -0.01em;
+    }
+
+    .faq-item .q::before {
+      content: "Q";
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      background: var(--dd-ink);
+      color: var(--dd-white);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .faq-item .a {
+      font-size: 14px;
+      color: var(--dd-text);
+      padding-left: 34px;
+      line-height: 1.55;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      padding: 56px 0;
+      border-bottom: var(--dd-frame);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 900;
+      color: var(--dd-ink);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      margin-bottom: 14px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .final-cta h2 span { color: var(--dd-orange); }
+
+    .final-cta p {
+      font-size: 16px;
+      color: var(--dd-text);
+      max-width: 480px;
+      margin: 0 auto 34px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 28px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+      color: var(--dd-ink);
+      font-family: "Inter", sans-serif;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 760px) {
+      .cols-3, .flow-steps, .scores {
+        grid-template-columns: 1fr;
+      }
+      .objection {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .hero-meta {
+        gap: 10px;
+      }
+      .meta-pill {
+        min-width: 120px;
+        padding: 10px 14px;
+      }
+      .meta-pill .value { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <div class="brand-mark">DD</div>
+      <div class="brand-title">DIGITALLY<span>DEFINED.</span></div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="eyebrow">For Gen X Women Who Are Done Managing Chaos</div>
+      <h1>You're Carrying Everyone Else.<br><span>Who's Carrying Your Future?</span></h1>
+      <p class="hero-sub">
+        Aging parents. Adult children. Work. Bills. A retirement plan that never had a chance to keep up.<br><br>
+        Legacy OS gives you one system to plan the money, protect against caregiving chaos, and run the operation without carrying it all in your head.
+      </p>
+
+      <div class="hero-meta">
+        <div class="meta-pill">
+          <div class="value">$297</div>
+          <div class="label">One-time</div>
+        </div>
+        <div class="meta-pill">
+          <div class="value">3</div>
+          <div class="label">Core Tools</div>
+        </div>
+        <div class="meta-pill">
+          <div class="value">Now</div>
+          <div class="label">Instant Access</div>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn" href="#checkout">Get Legacy OS for $297</a>
+        <span class="btn-sub">No subscription · Instant download · No fluff</span>
+      </div>
+    </section>
+
+    <!-- WHAT'S INSIDE -->
+    <section class="section" id="what-sold">
+      <div class="section-head">
+        <div class="section-label">What You're Getting</div>
+        <h2 class="section-title">One System. Three Layers.<br>Zero Chaos.</h2>
+        <p class="section-sub">Not three loose files. One branded operating system with a clear sequence.</p>
+      </div>
+
+      <div class="cols-3">
+        <div class="col-card col-card--blue">
+          <div class="num">01</div>
+          <span class="card-eyebrow">Strategy Layer</span>
+          <h3>Financial Autonomy Planner</h3>
+          <p>Define your Freedom Number. Map your income gap. Choose the digital asset mix that closes the retirement gap.</p>
+          <ul>
+            <li>Monthly target builder</li>
+            <li>Asset mix sliders</li>
+            <li>Exit multiple math</li>
+            <li>L.E.G.A.C.Y. framework</li>
+          </ul>
+        </div>
+
+        <div class="col-card col-card--orange">
+          <div class="num">02</div>
+          <span class="card-eyebrow">Protection Layer</span>
+          <h3>Caregiver's Survival Kit</h3>
+          <p>Turn the caregiving crisis into a financial map. Understand the benefit paths. Stop guessing at Medicaid, VA, and paid leave.</p>
+          <ul>
+            <li>Caregiving exposure model</li>
+            <li>Medicaid / VA / PFL guide</li>
+            <li>Eligibility chain logic</li>
+            <li>Reality-check guardrails</li>
+          </ul>
+        </div>
+
+        <div class="col-card col-card--green">
+          <div class="num">03</div>
+          <span class="card-eyebrow">Operations Layer</span>
+          <h3>Legacy Command Center</h3>
+          <p>Run the day-to-day without losing control. Appointments, delegation, budgets, and firm communication in one place.</p>
+          <ul>
+            <li>Care calendar</li>
+            <li>Task delegation</li>
+            <li>Budget goals</li>
+            <li>Diplomat drafting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <div class="col-card" style="text-align:center;">
+          <span class="card-eyebrow" style="color: var(--dd-ink);">Plus</span>
+          <h3 style="text-align:center;">Instant Delivery + Setup Guide</h3>
+          <p style="max-width:420px; margin:0 auto;">
+            Download links, 2-minute setup instructions, and your first 3 actions.
+            You are operational before the day is over.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOW -->
+    <section class="section">
+      <div class="section-head">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Plan → Protect → Operate</h2>
+        <p class="section-sub">One sequence. One system. No guesswork about what to do next.</p>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <h4>Plan the Money</h4>
+          <p>Your Freedom Number, asset mix, and exit math. You know exactly what you need to build.</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <h4>Protect the Crisis</h4>
+          <p>Your caregiving exposure, benefit paths, and financial leakage. You know exactly where to stop the bleed.</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <h4>Run the Operation</h4>
+          <p>Appointments, delegation, budgets, and communication. You run the system instead of the system running you.</p>
+        </div>
+      </div>
+
+      <div class="guarantee">
+        <h3>Built for the Sandwich Generation</h3>
+        <p>
+          If you're carrying parents, kids, work, and a retirement gap all at once,
+          this is the system that keeps you from falling through all four at the same time.
+        </p>
+      </div>
+    </section>
+
+    <!-- OBJECTIONS -->
+    <section class="section">
+      <div class="section-head">
+        <div class="section-label">Honest Answers</div>
+        <h2 class="section-title">What You're Probably Wondering</h2>
+      </div>
+
+      <div class="objections">
+        <div class="objection">
+          <div class="q">"I don't know where to start."</div>
+          <div class="a">You start with the Planner. It gives you the target before you touch the operations layer. One step at a time.</div>
+        </div>
+        <div class="objection">
+          <div class="q">"I can't afford another thing."</div>
+          <div class="a">This is not another app. It's the system that stops financial leakage from caregiving and unclear retirement math. The alternative costs you more every month.</div>
+        </div>
+        <div class="objection">
+          <div class="q">"I'm not technical."</div>
+          <div class="a">The tools are built for non-technical users. No code, no developer, no backend. You open them and use them.</div>
+        </div>
+        <div class="objection">
+          <div class="q">"Is this just another planner?"</div>
+          <div class="a">No. A planner is one tool. The Legacy OS is the full operating layer: strategy, protection, and operations. One system, not scattered files.</div>
+        </div>
+        <div class="objection">
+          <div class="q">"Will this help with caregiving specifically?"</div>
+          <div class="a">Yes. The Survival Kit is built specifically for the sandwich generation and the financial shock of caregiving. It maps the paths most caregivers don't know exist.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section class="section" id="checkout">
+      <div class="section-head">
+        <div class="section-label">Get Access</div>
+        <h2 class="section-title">One Price. One System.<br>Start Today.</h2>
+      </div>
+
+      <div class="scores">
+        <div class="score">
+          <div class="score-value">8/10</div>
+          <div class="score-label">Revenue</div>
+        </div>
+        <div class="score">
+          <div class="score-value">8/10</div>
+          <div class="score-label">Demand</div>
+        </div>
+        <div class="score">
+          <div class="score-value">3/10</div>
+          <div class="score-label">Build Complexity</div>
+        </div>
+        <div class="score">
+          <div class="score-value">10/10</div>
+          <div class="score-label">Speed to Revenue</div>
+        </div>
+      </div>
+
+      <div class="price-box">
+        <div class="eyebrow">The Legacy OS Bundle</div>
+        <div class="price-value">$297</div>
+        <div class="price-sub">One-time · No subscription · Instant access</div>
+
+        <div class="price-includes">
+          <span>Planner</span>
+          <span>Survival Kit</span>
+          <span>Command Center</span>
+          <span>Setup Guide</span>
+          <span>Delivery Page</span>
+        </div>
+
+        <a class="btn" href="#final">Buy the Bundle</a>
+        <p class="price-note">Replace with your live checkout link before launch.</p>
+      </div>
+
+      <div class="guarantee">
+        <h3>What This Is Not</h3>
+        <p>
+          Not legal advice. Not tax advice. Not a medical system.
+          It is a planning, protection, and operations framework
+          that tells you exactly where to get professional help when you need it.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="section-head">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Before You Buy</h2>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <div class="q">Do I need to be good with tech to use this?</div>
+          <div class="a">No. Every tool is designed for non-technical users. You open, you use, you start. No setup headaches.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q">Is this a subscription?</div>
+          <div class="a">No. Phase 1 is a one-time $297 purchase. You keep the tools. You keep the access. No recurring charge.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q">What if I'm not in the sandwich generation?</div>
+          <div class="a">The Planner and Command Center still apply. The Survival Kit is the specific caregiving layer — if that's not your situation yet, the other two still hold value.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q">Can I use this for my own business or just my family?</div>
+          <div class="a">Both. The system was built for Gen X women running a family operation, but the same logic applies to running a digital business alongside it.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q">What's the difference between the Survival Kit and the Command Center?</div>
+          <div class="a">The Kit is the map — it shows you the financial and benefit landscape. The Command Center is the daily operation — it runs the calendar, tasks, and communication.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="final">
+      <h2>You Can Keep Managing It All.<br>Or You Can <span>Build the System.</span></h2>
+      <p>
+        The Legacy OS Bundle is the smallest thing that gives you
+        a real operating layer for your money, your caregiving, and your day-to-day.
+      </p>
+      <a class="btn" href="#checkout">Get the $297 Bundle</a>
+      <div style="margin-top:14px;">
+        <span class="btn-sub">Instant access · No subscription · No fluff</span>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>© 2026 DigitallyDefined · Build What You Own</div>
+      <div>Sovereign Wealth for Gen X Women</div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
